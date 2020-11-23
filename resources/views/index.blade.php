@@ -1,0 +1,3 @@
+@extends('head')
+
+@extends('layout')
