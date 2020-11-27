@@ -5,56 +5,45 @@
 Conselho Fiscal
 @endsection
 @section('content')
-<div class="card-columns">
-    <div class="card" style="max-width: 241px;">
-    <h4 class="card-title">{{Chapa}} </h4>
-        <img class="card-img-top" src="assets/images/Charles Everson.png" alt="Card image cap">
-        <div class="card-block">
-            <h4 class="card-title">Membro n. 1 : CHARLES EVERSON DA NÓBREGA</h4>
-           
+
+
+
+    <div class="card-columns">
+    
+    <div class="card" style="max-width: 300px;">
+        @foreach ($conselhos as $conselho)
+        <h4 class="card-title">{{$conselho->chapa}}</h4>
+            <img class="card-img-top" src="" alt="Card image cap">
+            <div class="card-block">
+            <p class="card-text">{{$conselho->posicao_membro}}: {{$conselho->membro}} </p>
+             
+        </div>
+        @endforeach
+
+        <button class="btn btn-primary" data-id="{{ $conselho->id }}">Votar</button>
+    
     </div>
-    <img class="card-img-top" src="assets/images/Charles Everson.png" alt="Card image cap">
-        <div class="card-block">
-            <h4 class="card-title">Membro n. 1 : CHARLES EVERSON DA NÓBREGA</h4>
-           
-    </div>
-    <img class="card-img-top" src="assets/images/Charles Everson.png" alt="Card image cap">
-        <div class="card-block">
-            <h4 class="card-title">Membro n. 1 : CHARLES EVERSON DA NÓBREGA</h4>
-           
-    </div>
-    <img class="card-img-top" src="assets/images/Charles Everson.png" alt="Card image cap">
-        <div class="card-block">
-            <h4 class="card-title">Membro n. 1 : CHARLES EVERSON DA NÓBREGA</h4>
-           
-    </div>
+    
+
+    <div class="card-columns">
+     
+   
+        
         
     </div>
-        
-        <button type="button" class="btn btn-primary">Votar</button>
-        <div class="card-columns">
-        <div class="card" style="max-width: 241px;">
-                <div class="card-block">
-                    <h4 class="card-title">Voto em Branco </h4>
-                    
-                    <p class="card-text">
-                        <small class="text-muted"></small>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary">Votar</button>    
-        <div class="card-columns">   
-            <div class="card" style="max-width: 241px;">
-                
-                <div class="card-block">
-                    <h4 class="card-title">Voto Nulo </h4>
-                    
-                </div>
-            </div>
-        </div>
-        <button type="button" class="btn btn-primary">Votar</button>
- 
-        @endsection
+
+
+    <div class="card-columns">
+@foreach ($brancoNulo as $branco)
+
+<div class="card" style="max-width: 241px;">
+        <div class="card-block">
+            <h4 class="card-title">{{$branco->nome}} </h4>
+            <button class="btn btn-primary" data-id="{{ $branco->id_chapa }}">Votar</button>
+        </div>       
+</div>
+
+@endforeach
+@endsection
  
         

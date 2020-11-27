@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 Use Illuminate\Support\Facades\Auth;
 
-class VotouConselho
+class VotouNacional
 {
     /**
      * Handle an incoming request.

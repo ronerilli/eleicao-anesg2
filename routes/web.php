@@ -19,24 +19,21 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('/index');
 });
 
-Route::get('votacaonacional', [VotacaoNacionalController::class, 'display']);
+Route::get('/votacaonacional', [VotacaoNacionalController::class, 'display'])->middleware('votounacional');
+Route::post('votacaonacional/{id}', [VotacaoEstadualController::class, 'registravoto']);
 
 Route::get('/votacaoconselhofiscal', [VotacaoConselhoController::class,'display'])->middleware('votouconselho');
+Route::post('registravoto/{id}', [VotacaoEstadualController::class, 'registravoto']);
 
-Route::get('votacaoestadual', [VotacaoEstadualController::class, 'display']);
+Route::get('/votacaoestadual', [VotacaoEstadualController::class, 'display'])->middleware('votouestadual');
+Route::post('registravoto/{id}', [VotacaoEstadualController::class, 'registravoto']);
 
 Route::get('/register', [RegisterController::class, 'register']);
-//Route::post('/', [RegistroController::class, 'salvar']);
  
 Route::get('/login', [LoginController::class, 'login']);
-
-//Route::get('/logout', 'SessionsController@destroy');
-
-//Route::get('/', 'App\Http\Controllers\UserController@dashboard')->middleware('auth');
-
 
 Auth::routes();
 
