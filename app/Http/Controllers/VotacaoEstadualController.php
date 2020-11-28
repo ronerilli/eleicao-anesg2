@@ -52,10 +52,10 @@ class VotacaoEstadualController extends Controller
      ->where ('id_chapa','=', $request->id)->increment('votos',1);
     
     
-    DB::table('users')
+     DB::table('users')
     ->where('id',Auth::user()->id)
-    ->update(['votou_nacional' => 1]);
-    
+    ->update(['votou_estadual' => 1]);
+  
      
   
 

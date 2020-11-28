@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class VotacaoConselhoController extends Controller
 {
@@ -33,24 +34,25 @@ class VotacaoConselhoController extends Controller
     
       }  
 
-        public function registravoto(Request $request)
-        {
+      public function registravoto2(Request $request)
+ {
 
-            DB::table('chapas')
-            ->where ('id_chapa','=', $request->id)->increment('votos',1);
-            
-            
-            DB::table('users')
-            ->where('id',Auth::user()->id)
-            ->update(['votou_conselho' => 1]);
-            
-            
-          
+     DB::table('chapas')
+     ->where ('id_chapa','=', $request->id)->increment('votos',1);
+    
+    
+    DB::table('users')
+    ->where('id',Auth::user()->id)
+    ->update(['votou_conselho' => 1]);
+    
+     
+  
 
-            
-            return redirect()->route('home')->withSuccess('Voto confirmado!');
-            
-        }
+    
+     return redirect()->route('home')->withSuccess('Voto confirmado!');
+     
+ }
+
     
     
 }

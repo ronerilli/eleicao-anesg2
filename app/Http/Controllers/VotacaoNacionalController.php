@@ -37,10 +37,10 @@ class VotacaoNacionalController extends Controller
     
       } 
     
-      public function registravoto(Request $request)
+      public function registravoto3(Request $request)
  {
 
-  dd($request->id );
+  
             DB::table('chapas')
             ->where ('id_chapa','=', $request->id)->increment('votos',1);
             

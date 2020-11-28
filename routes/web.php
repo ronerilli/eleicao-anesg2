@@ -23,10 +23,10 @@ Route::get('/', function () {
 });
 
 Route::get('/votacaonacional', [VotacaoNacionalController::class, 'display'])->middleware('votounacional');
-Route::post('votacaonacional/{id}', [VotacaoEstadualController::class, 'registravoto']);
+Route::post('registravoto3/{id}', [VotacaoNacionalController::class, 'registravoto3']);
 
 Route::get('/votacaoconselhofiscal', [VotacaoConselhoController::class,'display'])->middleware('votouconselho');
-Route::post('registravoto/{id}', [VotacaoEstadualController::class, 'registravoto']);
+Route::post('registravoto2/{id}', [VotacaoConselhoController::class, 'registravoto2']);
 
 Route::get('/votacaoestadual', [VotacaoEstadualController::class, 'display'])->middleware('votouestadual');
 Route::post('registravoto/{id}', [VotacaoEstadualController::class, 'registravoto']);
