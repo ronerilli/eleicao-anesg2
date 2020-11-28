@@ -53,7 +53,7 @@ class VotacaoNacionalController extends Controller
           
 
             
-            return redirect()->route('home')->withSuccess('Voto confirmado!');
+            return redirect('/')->with('success','Voto confirmado!');
      
  }
 

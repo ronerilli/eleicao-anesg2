@@ -161,6 +161,7 @@
                         </div>            <div class="row">
 
                         <div>
+                        @include('flash-message')
                         @yield('content') </div>
                             
                         </div>
@@ -179,7 +180,7 @@
                         <div class="row">                            
                     </div>
                         </div>
-                <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+                
         </div>
     </div>
 <script type="text/javascript" src="js/main.js"></script></body>

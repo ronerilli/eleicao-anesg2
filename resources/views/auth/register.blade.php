@@ -39,10 +39,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF') }}</label>
+                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF (apenas números)') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" class="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="CPF">
+                                <input id="cpf" type="text" maxlength = "11" class ="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="CPF">
 
                                 @error('cpf')
                                     <span class="invalid-feedback" role="alert">
@@ -98,5 +98,7 @@
             </div>
         </div>
     </div>
+
 </div>
+
 @endsection

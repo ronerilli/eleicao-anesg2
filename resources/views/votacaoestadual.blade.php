@@ -15,14 +15,14 @@ Delegacia Estadual
     
      
         <div class="card" style="max-width: 300px;">
-        <h4 class="card-title">{{$chapa->chapa}}</h4>
-            <img class="card-img-top" src="" alt="Card image cap">
+        <h4 class="card-title col d-flex justify-content-center">{{$chapa->chapa}}</h4>
+            <img class="card-img-top" src="{{$chapa->foto}}" alt="Card image cap">
             <div class="card-block">
-            <p class="card-text">{{$chapa->nome_posicao}}: {{$chapa->candidato}} </p>
-            <p class="card-text">{{$chapa->posicao_membro}}: {{$chapa->membro}} </p>
+            <p class="card-text col d-flex justify-content-center" >{{$chapa->nome_posicao}}: {{$chapa->candidato}} </p>
+            <p class="card-text col d-flex justify-content-center">{{$chapa->posicao_membro}}: {{$chapa->membro}} </p>
                   <form method="POST" action="registravoto/{{ $chapa->id }}">
                   {{csrf_field()}}
-                   <button class="btn btn-primary" type="submit">Votar</button>
+                   <button class="btn btn-primary col d-flex justify-content-center" type="submit">Votar</button>
                 </form>
 
             
@@ -39,8 +39,8 @@ Delegacia Estadual
         @foreach ($brancoNulo as $branco)
 
         <div class="card" style="max-width: 241px;">
-                <div class="card-block ">
-                    <h4 class="card-title">{{$branco->nome}} </h4>
+                <div class="card-block col d-flex justify-content-center ">
+                    <h4 class="card-title col d-flex justify-content-center">{{$branco->nome}} </h4>
                     <form method="POST" action="registravoto/{{ $branco->id_chapa }}">
                         {{csrf_field()}}
                         <button class="btn btn-primary" type="submit">Votar</button>
