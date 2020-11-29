@@ -39,12 +39,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="cpf" class="col-md-4 col-form-label text-md-right">{{ __('CPF (apenas números)') }}</label>
+                            <label for="matricula" class="col-md-4 col-form-label text-md-right">{{ __('Matrícula') }}</label>
 
                             <div class="col-md-6">
-                                <input id="cpf" type="text" maxlength = "11" class ="form-control @error('cpf') is-invalid @enderror" name="cpf" value="{{ old('cpf') }}" required autocomplete="CPF">
+                                <input id="matricula" type="text" maxlength = "8" class ="form-control @error('matricula') is-invalid @enderror" name="matricula" value="{{ old('matricula') }}" required autocomplete="matricula">
 
-                                @error('cpf')
+                                @error('matricula')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>

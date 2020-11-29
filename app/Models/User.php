@@ -19,7 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
-        'cpf',
+        'matricula',
         'id_uf',
         'id_perfil',
         'votou_nacional',
@@ -27,6 +27,8 @@ class User extends Authenticatable
         'votou_conselho',
         'password',
     ];
+
+    
 
     /**
      * The attributes that should be hidden for arrays.
@@ -59,6 +61,7 @@ class User extends Authenticatable
 
     }
 
+    
     
 
 }
