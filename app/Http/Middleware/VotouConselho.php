@@ -23,9 +23,9 @@ class VotouConselho
             return $next($request);
         }
         
-        return redirect('/');
+        return redirect('/')->with('error','O seu voto já foi computado para este cargo.'); ;
     }
-    abort(403);
-}
-     
+    
+    return redirect('/')->with('error','Você precisa estar logado para votar.');    
+    } 
 }
