@@ -9,6 +9,12 @@ Delegacia Estadual
 @section('content')
 
 
+@if(count($chapas) == 0)
+    
+        
+            <h3>Não há chapas cadastradas no seu estado.</h3>
+        
+@else   
 
     <div class="card-columns">
     @foreach ($chapas as $chapa)
@@ -39,22 +45,24 @@ Delegacia Estadual
         @foreach ($brancoNulo as $branco)
 
         <div class="card" style="max-width: 241px;">
-                <div class="card-block col d-flex justify-content-center ">
+                <div class="card-block">
                     <h4 class="card-title col d-flex justify-content-center">{{$branco->nome}} </h4>
                     <form method="POST" action="registravoto/{{ $branco->id_chapa }}">
                         {{csrf_field()}}
-                        <button class="btn btn-primary" type="submit">Votar</button>
+                        <button class="btn btn-primary col d-flex justify-content-center" type="submit">Votar</button>
                         </form>
                 </div>       
         </div>
 
 
-@if(Session::get('success'))
-           <div class="alert alert-success">
-               {{session::get('success')}}
-           </div>
-@endif
-        
-  
-@endforeach
+            @if(Session::get('success'))
+                    <div class="alert alert-success">
+                        {{session::get('success')}}
+                    </div>
+            @endif
+     
+        @endforeach
+
+@endif 
+
 @endsection
