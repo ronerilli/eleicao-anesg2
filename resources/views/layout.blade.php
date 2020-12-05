@@ -158,7 +158,7 @@
                                                                 
                                 </div>
                                    </div>
-                        </div>            <div class="row">
+                        </div>            <div class="text-center">
 
                         <div>
                         @include('flash-message')
