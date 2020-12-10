@@ -5,6 +5,9 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\VotacaoNacionalController;
 use App\Http\Controllers\VotacaoEstadualController;
 use App\Http\Controllers\VotacaoConselhoController;
+use App\Http\Controllers\ResultadoController;
+use App\Http\Controllers\RelatorioController;
+
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -38,4 +41,10 @@ Route::get('/login', [LoginController::class, 'login']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/resultado', [ResultadoController::class, 'display'])->name('resultado');
+
+
 
