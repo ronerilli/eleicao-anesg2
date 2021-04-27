@@ -7,7 +7,7 @@ Resultados
 
 @endsection
 @section('content')
-<a class="btn btn-primary align=right" href="{{ URL::to('/relatorio/pdf') }}">Imprimir</a>
+
 <h5 class="text-left" >Diretoria Nacional</h5>
 
     <table class="table table-bordered">
@@ -75,7 +75,7 @@ Resultados
             @endforeach 
         </table>   
 
-    
+
 
 
 @endsection
